@@ -4,8 +4,6 @@ use Test::More;
 
 use say;
 
-can_ok 'say', qw/new/;
-
-# write more tests
+ok say('Hello');
 
 done_testing;

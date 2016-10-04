@@ -1,15 +1,29 @@
 package say;
 use strict;
 use warnings;
-use Carp qw/croak/;
 
 our $VERSION = '0.01';
 
-sub new {
-    my $class = shift;
-    my $args  = shift || +{};
+sub import {
+    my $class  = shift;
 
-    bless $args, $class;
+    my $caller = caller;
+
+    if( $] < 5.010 ) {
+        require Perl6::Say;
+        Perl6::Say->import;
+
+        no strict 'refs'; ## no critic
+        *{$caller . '::say'} = \&Perl6::Say::say;
+    }
+    else {
+        require feature;
+        feature->import('say');
+    }
+
+    if (scalar @_) {
+        feature->import(@_);
+    }
 }
 
 1;
@@ -20,17 +34,30 @@ __END__
 
 =head1 NAME
 
-say - one line description
+say - say anything
 
 
 =head1 SYNOPSIS
 
     use say;
+    say "Hello!";
 
 
 =head1 DESCRIPTION
 
-say is
+B<say> module allows Perl code to use B<say>.
+
+And if you would pass args to B<say> like below, then some features are enabled to use them as same as L<feature> module.
+
+    use say qw/state switch/;
+
+    state $foo = int(rand 10);
+
+    given ($foo) {
+        when (1) { say "One" }
+        when (2) { say "Two" }
+        default  { say "Above Two" }
+    }
 
 
 =head1 REPOSITORY
@@ -53,7 +80,11 @@ Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
 
 =head1 SEE ALSO
 
-L<Other::Module>
+L<feature>
+
+L<Say::Compat>
+
+L<Perl6::Say>
 
 
 =head1 LICENSE

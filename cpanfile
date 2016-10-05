@@ -1,7 +1,4 @@
 requires 'perl', '5.008005';
-requires 'strict';
-requires 'warnings';
-requires 'feature';
 requires 'Perl6::Say';
 
 on 'test' => sub {

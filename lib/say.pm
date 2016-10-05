@@ -18,11 +18,9 @@ sub import {
     }
     else {
         require feature;
-        feature->import('say');
-    }
-
-    if (scalar @_) {
-        feature->import(@_);
+        for my $f ('say', @_) {
+            feature->import($f);
+        }
     }
 }
 

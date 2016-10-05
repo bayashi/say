@@ -5,7 +5,7 @@ This is Perl module B<say>.
 
 =begin html
 
-<a href="http://travis-ci.org/bayashi/say"><img src="https://secure.travis-ci.org/bayashi/say.png"/></a> <a href="https://coveralls.io/r/bayashi/say"><img src="https://coveralls.io/repos/bayashi/say/badge.png?branch=master"/></a>
+<a href="http://travis-ci.org/bayashi/say"><img src="https://secure.travis-ci.org/bayashi/say.png?_t=1475708487"/></a> <a href="https://coveralls.io/r/bayashi/say"><img src="https://coveralls.io/repos/bayashi/say/badge.png?_t=1475708487&branch=master"/></a>
 
 =end html
 

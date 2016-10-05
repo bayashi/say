@@ -29,10 +29,7 @@
       "runtime" : {
          "requires" : {
             "Perl6::Say" : "0",
-            "feature" : "0",
-            "perl" : "5.008005",
-            "strict" : "0",
-            "warnings" : "0"
+            "perl" : "5.008005"
          }
       },
       "test" : {
@@ -44,7 +41,7 @@
    "provides" : {
       "say" : {
          "file" : "lib/say.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -63,6 +60,6 @@
          "web" : "http://webchat.freenode.net/?channels=%23bayadev"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_serialization_backend" : "JSON::PP version 2.27300"
 }

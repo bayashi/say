@@ -42,4 +42,4 @@ Then install it:
 
 ## AUTHOR
 
-Dai Okabayashi bayashi@cpan.org
+Dai Okabayashi http://github.com/bayashi
